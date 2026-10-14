@@ -58,18 +58,35 @@ Từ ảnh JMeter sau khi chạy: đồng hồ hiển thị `00:01:40`, trạng 
 - Dòng TOTAL có thời gian tối đa **98.433 ms**, nhưng đây là dữ liệu **cộng dồn nhiều lượt**; không gán giá trị này riêng cho bài 1.000 threads.
 - Cần chạy lại với **Run → Clear All** trước mỗi lượt, lưu tệp kết quả riêng, để so sánh chính xác giữa các cấu hình.
 
-## 5. Danh sách ảnh minh họa cần gắn vào báo cáo
+## 5. Ảnh minh họa thực tế
 
-**Chưa có file ảnh tương ứng được xác nhận trong repo.** Sau khi tải ảnh thật vào thư mục `images/`, thay các dòng “Chưa gắn ảnh” bằng cú pháp Markdown ở cột cuối.
+Các ảnh đã được tải lên thư mục `images/` của repository. Đường dẫn dưới đây sử dụng **tên file thực tế trên GitHub**, không cần đổi tên.
 
-| Tên file cần tải lên | Nội dung cần nhìn rõ | Trạng thái | Cú pháp để chèn |
-|---|---|---|---|
-| `images/01-thread-group-1000.png` | 1.000 Threads, Ramp-up 100, Loop Count 5 | Đã gửi ảnh trong chat; cần upload lên GitHub | `![Thread Group 1000](images/01-thread-group-1000.png)` |
-| `images/02-http-request.png` | Method GET, protocol https, domain dummyjson.com, path /products/1 | Cần chụp hoặc upload | `![HTTP Request](images/02-http-request.png)` |
-| `images/03-results-tree-1000.png` | Response code 200, Response message OK | Đã gửi ảnh trong chat; cần upload lên GitHub | `![View Results Tree 1000](images/03-results-tree-1000.png)` |
-| `images/04-summary-report-1000.png` | Bảng Summary Report, gồm nhãn và các cột thống kê | Đã gửi ảnh trong chat; cần upload lên GitHub | `![Summary Report 1000](images/04-summary-report-1000.png)` |
+### 5.1. Cấu hình Thread Group — 1.000 threads, ramp-up 100 giây
 
-> **Ghi chú:** Ảnh Summary Report hiện có tổng 33.800 Samples gồm nhiều dòng; chú thích ảnh là “Bảng kết quả tích lũy nhiều lần chạy”, không ghi “33.800 request của 1.000 users”. Chỉ chèn hình bằng Markdown khi file thực sự tồn tại trên GitHub để tránh lỗi hình ảnh.
+Ảnh thể hiện số người dùng ảo, thời gian ramp-up và số vòng lặp của lần thực hành.
+
+![Cấu hình Thread Group 1000 threads](images/thread_group.png)
+
+### 5.2. Cấu hình HTTP Request
+
+Ảnh thể hiện HTTP Request được sử dụng để thử nghiệm API.
+
+![Cấu hình HTTP Request](images/http.png)
+
+### 5.3. Kết quả View Results Tree
+
+Quan sát từng request và phản hồi. Ở mẫu đã kiểm tra: **HTTP 200 / OK**.
+
+![View Results Tree - phản hồi API](images/view.png)
+
+### 5.4. Ảnh kết quả bổ sung (get.png)
+
+Ảnh minh họa kết quả mà sinh viên đã tải lên với tên `get.png`. Khi đối chiếu trực tiếp, nếu đây là ảnh Summary Report thì sử dụng nó làm bằng chứng cho bảng thống kê mục 4; nếu đây là ảnh HTTP Request/GET thì cần bổ sung ảnh Summary Report riêng.
+
+![Ảnh kết quả JMeter get.png](images/get.png)
+
+> **Lưu ý quan trọng về bảng thống kê:** Ảnh Summary Report trước đó được chia sẻ trong cuộc trò chuyện có dòng TOTAL 33.800 Samples cộng dồn nhiều lượt chạy. Báo cáo không khẳng định 33.800 Samples là kết quả riêng của cấu hình 1.000 threads.
 
 ## 6. Hướng dẫn tái lập kết quả và lưu bằng chứng
 
@@ -90,7 +107,7 @@ Từ ảnh JMeter sau khi chạy: đồng hồ hiển thị `00:01:40`, trạng 
 
 ## 8. Kết luận
 
-Đã thực hành cấu hình mức tải 1.000 threads, 100 giây ramp-up và 5 vòng lặp, quan sát phản hồi HTTP 200 và báo cáo Summary Report. Các dòng được chụp có Error 0,00%. Cần tách dữ liệu từng lần chạy trước khi kết luận định lượng về mức tải 1.000 threads và so sánh với mức 10.000 threads. Báo cáo sẽ bổ sung ảnh trực tiếp sau khi các file PNG được upload vào repo.
+Đã thực hành cấu hình mức tải 1.000 threads, 100 giây ramp-up và 5 vòng lặp, quan sát phản hồi HTTP 200 và báo cáo Summary Report. Các dòng được chụp có Error 0,00%. Cần tách dữ liệu từng lần chạy trước khi kết luận định lượng về mức tải 1.000 threads và so sánh với mức 10.000 threads. Các ảnh minh họa hiện đã được chèn từ thư mục `images/`; cần đối chiếu nhãn và dữ liệu từng lượt chạy trước khi kết luận hiệu năng.
 
 ## 9. Tài liệu tham khảo
 
