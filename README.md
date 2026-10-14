@@ -35,7 +35,7 @@ JMeter khởi tạo người dùng ảo theo thời gian Ramp-up (trung bình kh
 
 ![HTTP Request GET DummyJSON](images/http.png)
 
-> Lưu ý: File `JMeter_API_Test.jmx` hiện có trên repo vẫn chứa cấu hình ban đầu 10 threads. Để tái lập chính xác phép thử này, cần lưu và tải lên bản JMX đã cấu hình 1.000 threads / 100 giây.
+> File [`JMeter_API_Test.jmx`](JMeter_API_Test.jmx) trong repository đã được cập nhật đúng cấu hình **1.000 threads, Ramp-up 100 giây, Loop Count 5** để phù hợp với báo cáo.
 
 ## 4. Kết quả thực nghiệm
 
